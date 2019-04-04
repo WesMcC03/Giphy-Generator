@@ -38,7 +38,17 @@ function renderButtons(){
             method:"GET"})
             .done(function(response){
                 console.log(response);
-            })
+                for (var i=0;i<response.data.length;i++) {
+                    var adiv = $('<div>');
+                    var p = $("<p>").text("rating:" +response.data[i].rating);
+                    var apic = $("<img>");
+                    apic.attr('src', response.data[i].images.fixed_height.url);
+
+                    adiv.append(p);
+                    adiv.append(apic);
+                    $('#gifstorage').append(adiv);
+                }
+            });
         
 
         renderButtons();
