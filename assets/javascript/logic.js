@@ -5,7 +5,7 @@ var queries = ["spiders", "wasps","scorpions","snakes"]
 
 function renderButtons(){
    
-    $("#animal-view").empty();
+    $("animal-view").empty();
 
     for (var i=0; i < queries.length; i++) {
     
@@ -23,16 +23,17 @@ function renderButtons(){
 }
     
         $("#add-animal").on("click", function(event) {
-    
-            event.preventDefault();
-    
-            var animal = $("#animal-input").val().trim();
-    
-            queries.push(animal);
-    
-            renderButtons();
-    
-        });
+
+        event.preventDefault();
+
+        var animal = $("#animal-input").val().trim();
+
+        queries.push(animal);
+        console.log(animal)
+
+        renderButtons();
+
+    });
     
     
     renderButtons();
